@@ -1,0 +1,15 @@
+.set_video{
+    height: 420px;
+    width:100%; 
+    margin-bottom: 20px;    
+}
+@media(max-width:425px){
+    .set_video {
+        height: 140px;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 20px;
+        object-fit: cover;
+        object-position: center;
+    }
+}
