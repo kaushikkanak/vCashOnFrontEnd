@@ -45,7 +45,7 @@ class Main extends Component {
                             <SideBar/>
                             <PrivateRoute exact path="/password" component={Password} />
                             {/* <Route exact path="/dashboard" component={Dashboard} /> */}
-                            <PrivateRoute exact path="/user" component={User} />
+                            <PrivateRoute exact path="/users" component={User} />
                             <PrivateRoute exact path="/brand" component={Brand} />
                             <PrivateRoute exact path="/offer" component={Offer} />
                             <PrivateRoute exact path="/feedback" component={Feedback} />
