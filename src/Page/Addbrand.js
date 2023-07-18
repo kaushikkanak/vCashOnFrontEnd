@@ -1,7 +1,7 @@
 /* eslint-disable eqeqeq */
 import React, { Component } from "react";
 // import SideBar from '../Page/SideBar/Sidebar'
-import { GET, POST, PUT } from "../Common/apiRoute";
+import { GET, POST, PUT, UPLOAD } from "../Common/apiRoute";
 import { Link, NavLink } from "react-router-dom";
 import Select from "react-select";
 import { ImageUrl } from "../Common/apiRoute";
@@ -86,7 +86,7 @@ class Addbrand extends Component {
 				});
 			}
 
-			POST(`files/upload/${name}`, fd, { headerStatus: true })
+			UPLOAD(`files/upload/${name}`, fd, { headerStatus: true })
 				.then((res) => {
 					if (name === "brandImage") {
 						this.setState({
