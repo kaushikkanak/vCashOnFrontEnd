@@ -42,6 +42,7 @@ class Addoffer extends Component {
 		availcountInput: 0,
 		imageValidation: "",
 		today: "",
+		link: "",
 	};
 
 	componentDidMount() {
@@ -180,6 +181,10 @@ class Addoffer extends Component {
 					this.setState({
 						notify: e.target.checked,
 					});
+				} else if (name === "link") {
+					this.setState({
+						link: value,
+					});
 				}
 			}
 		}
@@ -225,6 +230,7 @@ class Addoffer extends Component {
 			validFrom,
 			validUpto,
 			notify,
+			link,
 			// availcount,
 			// availcountInput,
 		} = this.state;
@@ -246,6 +252,7 @@ class Addoffer extends Component {
 			validFrom: new Date(validFrom),
 			validUpto: new Date(validUpto),
 			notify: notify,
+			link: link,
 			// availCount: availcount === -1 ? availcount : availcountInput,
 		};
 		// console.log(
@@ -411,7 +418,7 @@ class Addoffer extends Component {
 	};
 
 	render() {
-		let { validUpto, title, desc, images } = this.state;
+		let { validUpto, title, desc, images, link } = this.state;
 		let options = this.state.brands.map((item) => {
 			return { value: item.uid, label: item.name };
 		});
@@ -578,6 +585,19 @@ class Addoffer extends Component {
                           Should be greater than start date.
                         </span>
                       ) : null} */}
+										</div>
+									</div>
+									<div className="col-12 col-md-12">
+										<div className="form-group">
+											<label>Link</label>
+											<input
+												type="text"
+												className="form-control mb-3"
+												name="link"
+												placeholder="Link"
+												value={link}
+												onChange={this.handleChange}
+											/>
 										</div>
 									</div>
 									<div class="col-12">
